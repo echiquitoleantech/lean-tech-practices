@@ -28,6 +28,11 @@ if (isset($jsondata) && !empty($jsondata) && json_last_error() !== JSON_ERROR_NO
     return;
 }
 
+/*
+|--------------------------------------------------------------------------
+| Routing
+|--------------------------------------------------------------------------
+*/
 $router = new src\core\Router();
 
 /*
@@ -35,14 +40,15 @@ $router = new src\core\Router();
 | Routes
 |--------------------------------------------------------------------------
 */
-/* Sample routes
-$router->get('/products', ProductsController::class . '::getList');
-$router->post('/products', ProductsController::class . '::addNew');
-$router->post('/', RepositoryController::class . '::indexAction');
-*/
 
 $router->get('/', RepositoryController::class . '::indexAction');
 $router->any(RepositoryController::class . '::noActionFound');
 
 // Run
 $router->run($request, $_SERVER['REQUEST_METHOD']);
+
+/* Sample routes
+$router->get('/products', ProductsController::class . '::getList');
+$router->post('/products', ProductsController::class . '::addNew');
+$router->post('/', RepositoryController::class . '::indexAction');
+*/
