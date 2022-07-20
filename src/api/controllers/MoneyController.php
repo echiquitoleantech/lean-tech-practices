@@ -11,7 +11,7 @@ class MoneyController
         $return = array();
         $result = array();
 
-        if (isset($request['total'])) {
+        if (isset($request['total']) && !empty($request['total'])) {
 
             $total = floatval($request['total']);
 
