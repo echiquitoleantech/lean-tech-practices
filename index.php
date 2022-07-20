@@ -45,7 +45,8 @@ $router = new src\core\Router();
 $router->any(RepositoryController::class . '::noActionFound');
 $router->get('/', RepositoryController::class . '::indexAction');
 
-$router->post('/money/coinchange', MoneyController::class . '::postCoinChange');
+$router->get('/money', RepositoryController::class . '::indexAction');
+$router->get('/money/coinchange', MoneyController::class . '::postCoinChange');
 
 // Run
 $router->run($request, $_SERVER['REQUEST_METHOD']);
