@@ -27,3 +27,8 @@
 -- Invoices Print
 -- Figuras Geometricas
 
+## TRELLO
+-- https://trello.com/c/gV77extc/2-scripts-backend
+
+## GitHub
+-- https://github.com/echiquitoleantech/lean-tech-practices
