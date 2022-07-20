@@ -12,6 +12,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE');
 header('content-type: application/json; charset=utf-8');
 
 use src\api\controllers\RepositoryController;
+use src\api\controllers\MoneyController;
 use src\api\Helpers;
 
 spl_autoload_register(function ($class) {
@@ -41,8 +42,10 @@ $router = new src\core\Router();
 |--------------------------------------------------------------------------
 */
 
-$router->get('/', RepositoryController::class . '::indexAction');
 $router->any(RepositoryController::class . '::noActionFound');
+$router->get('/', RepositoryController::class . '::indexAction');
+
+$router->post('/money/coinchange', MoneyController::class . '::postCoinChange');
 
 // Run
 $router->run($request, $_SERVER['REQUEST_METHOD']);
