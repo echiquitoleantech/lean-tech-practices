@@ -9,20 +9,31 @@ class MoneyController
     public static function postCoinChange($request)
     {
         $return = array();
-        $total = intval($request['total']);
-        $currencies = array(100, 500, 200, 100, 50, 20, 10, 5, 2, 1);
+        $result = array();
 
-        for ($i = 0; $i < count($currencies); $i++) {
+        if (isset($request['total'])) {
 
-            while ($total >= $currencies[$i]) {
+            $total = floatval($request['total']);
 
-                $total -= $currencies[$i];
+            if ($total >= -2147483648 && $total <= 2147483647) {
 
-                if (!isset($return[$currencies[$i]])) $return[$currencies[$i]] = 0;
+                $currencies = array(1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, '0.5', '0.2', '0.1');
 
-                $return[$currencies[$i]]++;
-            }
-        }
-        return Helpers::formatResponse(200, 'CoinChange: Thx for using our function!', $return);
+                for ($i = 0; $i < count($currencies); $i++) {
+
+                    while ($total >= $currencies[$i]) {
+
+                        if (!isset($result[$currencies[$i]])) $result[$currencies[$i]] = 0;
+
+                        $total -= $currencies[$i];
+
+                        $result[$currencies[$i]]++;
+                    }
+                }
+                $return = Helpers::formatResponse(200, 'Coin Change: Thx for using our function!', $result);
+            } else $return = Helpers::formatResponse(200, 'Total must betwwen -2147483648 and 2147483647', []);
+        } else $return = Helpers::formatResponse(403, 'Key \'Total\' Not Found', []);
+
+        return $return;
     }
 }
