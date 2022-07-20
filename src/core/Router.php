@@ -38,8 +38,8 @@ class Router
     {
         $this->controllers[$method . $path] = [
             'path' => $path,
-            'method' => $method,
-            'controller' => $controller
+            'controller' => $controller,
+            'method' => $method
         ];
     }
 
