@@ -9,10 +9,10 @@ class MoneyController
     public static function postCoinChange($request)
     {
         $return = array();
-        $result = array();
 
         if (isset($request['total']) && !empty($request['total'])) {
 
+            $result = array();
             $total = floatval($request['total']);
 
             if ($total >= -2147483648 && $total <= 2147483647) {
