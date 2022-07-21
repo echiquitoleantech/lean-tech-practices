@@ -6,6 +6,20 @@ use src\api\Helpers;
 
 class StringsController
 {
+    public static function getReverseString(array $request): array
+    {
+        $return = array();
+
+        if (isset($request['string']) && !empty($request['string'])) {
+            
+            $result = strval('');
+            $str = strval($request['string']);
+            for ($i = (strlen($str) - 1); $i >= 0; $i--) $result .= $str[$i];
+            $return = Helpers::formatResponse(200, 'Success', $result);
+        } else $return = Helpers::formatResponse(403, 'String Not Found', []);
+        return $return;
+    }
+
     public static function getVocalsData(array $request): array
     {
         $return = array();

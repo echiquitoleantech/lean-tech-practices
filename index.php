@@ -52,5 +52,6 @@ $router->get('/maths/calcForXNumber', MathsController::class . '::calcMultiplyTa
 $router->get('/figures', GeometricFiguresController::class . '::getGeometricFigureData');
 
 $router->get('/strings/phrasevocals', StringsController::class . '::getVocalsData');
+$router->get('/strings/reversestring', StringsController::class . '::getReverseString');
 
 $router->run($request, $_SERVER['REQUEST_METHOD']);
