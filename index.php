@@ -51,6 +51,7 @@ $router->get('/strings', RepositoryController::class . '::indexAction');
 $router->get('/money/coinchange', MoneyController::class . '::getCoinChange');
 $router->get('/maths/calculator', MathsController::class . '::getBasicCalculator');
 $router->get('/maths/calcForXNumber', MathsController::class . '::calcMultiplyTableForXNumber');
+$router->get('/maths/orderNumbers', MathsController::class . '::orderNumbers');
 $router->get('/figures', GeometricFiguresController::class . '::getGeometricFigureData');
 
 $router->get('/strings/phrasevocals', StringsController::class . '::getVocalsData');

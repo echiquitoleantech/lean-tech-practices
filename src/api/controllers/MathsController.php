@@ -67,4 +67,42 @@ class MathsController
 
         return $return;
     }
+
+    public static function orderNumbers(array $request): array
+    {
+        $return = array();
+        if (isset($request['numbers'])) {
+            $numbers = $request['numbers'];
+            $size = count($numbers)-1;
+            $out = [];
+            $out2 = [];
+             for ($i = 0; $i <= $size; $i++) {
+                for ($e=0; $e <= $size ; $e++) { 
+                    if($numbers[$i] > $numbers[$e]){
+                        $tmp = $numbers[$i];
+                        $numbers[$i] = $numbers[$e];
+                        $numbers[$e] = $tmp;
+                        $out = $numbers;
+                    }
+                }
+            }
+
+            for ($i = 0; $i <= $size; $i++) {
+                for ($e=0; $e <= $size ; $e++) { 
+                    if($numbers[$i] < $numbers[$e]){
+                        $tmp = $numbers[$i];
+                        $numbers[$i] = $numbers[$e];
+                        $numbers[$e] = $tmp;
+                        $out2 = $numbers;
+                    }
+                }
+            }
+            $result['Major2Minus'] = $out;
+            $result['Minus2Major'] = $out2;
+            $return = Helpers::formatResponse(200, 'Success', $result);
+        } else $return = Helpers::formatResponse(403, 'Key \'numbers\' Not Found', []);
+
+
+        return $return;
+    }
 }
