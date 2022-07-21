@@ -13,6 +13,7 @@ header('content-type: application/json; charset=utf-8');
 
 use src\api\controllers\RepositoryController;
 use src\api\controllers\MoneyController;
+use src\api\controllers\MathsController;
 use src\api\controllers\GeometricFigures;
 use src\api\controllers\ChooseVocalsFromPhrase;
 use src\api\Helpers;
@@ -33,31 +34,21 @@ if (isset($jsondata) && !empty($jsondata) && json_last_error() !== JSON_ERROR_NO
 
 /*
 |--------------------------------------------------------------------------
-| Routing
+| Router
 |--------------------------------------------------------------------------
 */
-$router = new src\core\Router();
 
-/*
-|--------------------------------------------------------------------------
-| Routes
-|--------------------------------------------------------------------------
-*/
+$router = new src\core\Router();
 
 $router->any(RepositoryController::class . '::noActionFound');
 $router->get('/', RepositoryController::class . '::indexAction');
-
 $router->get('/money', RepositoryController::class . '::indexAction');
-$router->get('/money/coinchange', MoneyController::class . '::postCoinChange');
+$router->get('/maths', RepositoryController::class . '::indexAction');
 
+$router->get('/money/coinchange', MoneyController::class . '::getCoinChange');
+$router->get('/maths/calculator', MathsController::class . '::getBasicCalculator');
 $router->get('/figures', GeometricFigures::class . '::getGeometricFigureData');
 
 $router->get('/phraseVocals', ChooseVocalsFromPhrase::class . '::getVocalsData');
-// Run
-$router->run($request, $_SERVER['REQUEST_METHOD']);
 
-/* Sample routes
-$router->get('/products', ProductsController::class . '::getList');
-$router->post('/products', ProductsController::class . '::addNew');
-$router->post('/', RepositoryController::class . '::indexAction');
-*/
+$router->run($request, $_SERVER['REQUEST_METHOD']);
