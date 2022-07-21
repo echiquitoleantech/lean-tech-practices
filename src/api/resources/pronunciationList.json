@@ -1,0 +1,106 @@
+{
+    "A": {
+        "pronunciación": "ei",
+        "fonética": "eɪ"
+    },
+    "B": {
+        "pronunciación": "bi",
+        "fonética": "bi"
+    },
+    "C": {
+        "pronunciación": "ci",
+        "fonética": "si"
+    },
+    "D": {
+        "pronunciación": "di",
+        "fonética": "di"
+    },
+    "E": {
+        "pronunciación": "i",
+        "fonética": "i"
+    },
+    "F": {
+        "pronunciación": "ef",
+        "fonética": "ef"
+    },
+    "G": {
+        "pronunciación": "yi",
+        "fonética": "dʒi"
+    },
+    "H": {
+        "pronunciación": "eich",
+        "fonética": "eɪtʃ"
+    },
+    "I": {
+        "pronunciación": "ai",
+        "fonética": "aɪ"
+    },
+    "J": {
+        "pronunciación": "jei",
+        "fonética": "dʒeɪ"
+    },
+    "K": {
+        "pronunciación": "kei",
+        "fonética": "keɪ"
+    },
+    "L": {
+        "pronunciación": "el",
+        "fonética": "el"
+    },
+    "M": {
+        "pronunciación": "em",
+        "fonética": "em"
+    },
+    "N": {
+        "pronunciación": "en",
+        "fonética": "en"
+    },
+    "O": {
+        "pronunciación": "ou",
+        "fonética": "əʊ"
+    },
+    "P": {
+        "pronunciación": "pi",
+        "fonética": "pi"
+    },
+    "Q": {
+        "pronunciación": "kiu",
+        "fonética": "kju"
+    },
+    "R": {
+        "pronunciación": "ar",
+        "fonética": "ɑr)/"
+    },
+    "S": {
+        "pronunciación": "es",
+        "fonética": "es"
+    },
+    "T": {
+        "pronunciación": "ti",
+        "fonética": "ti"
+    },
+    "U": {
+        "pronunciación": "iu",
+        "fonética": "ju"
+    },
+    "V": {
+        "pronunciación": "uvi",
+        "fonética": "vi"
+    },
+    "W": {
+        "pronunciación": "dabliu",
+        "fonética": "ˈdʌbə)l ju/"
+    },
+    "X": {
+        "pronunciación": "ex",
+        "fonética": "eks"
+    },
+    "Y": {
+        "pronunciación": "uai",
+        "fonética": "waɪ"
+    },
+    "Z": {
+        "pronunciación": "set",
+        "fonética": "zed"
+    }
+}

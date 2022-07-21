@@ -37,4 +37,13 @@ class Helpers
         $keys = array_keys($array);
         return $keys[0];
     }
+
+    public static function getFileAsArray($filename)
+    {
+        $fd = fopen($filename, 'r');
+        $jsonData = fread($fd, filesize($filename));
+        fclose($fd);
+
+        return json_decode($jsonData, TRUE);;
+    }
 }

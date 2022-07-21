@@ -9,9 +9,16 @@ class StringsController
     public static function getStringPronunciation(array $request): array
     {
         $return = array();
+        if (isset($request['literal']) && !empty($request['literal'])) {
 
-        if (isset($request['string']) && !empty($request['string'])) {
-        } else $return = Helpers::formatResponse(403, 'String Not Found', []);
+            $str = strtoupper(strval($request['literal']));
+            $pronunciationArray = Helpers::getFileAsArray(ROOT_API_PATH . 'src/api/resources/pronunciationList.json');
+
+            $return = key_exists($str, $pronunciationArray)
+                ? Helpers::formatResponse(200, 'success', $pronunciationArray[$str])
+                : Helpers::formatResponse(403, 'Value Not Match', []);
+                
+        } else $return = Helpers::formatResponse(403, 'Literal Not Found', []);
         return $return;
     }
 
