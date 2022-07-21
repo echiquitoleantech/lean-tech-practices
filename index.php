@@ -48,6 +48,8 @@ $router->get('/', RepositoryController::class . '::indexAction');
 $router->get('/money', RepositoryController::class . '::indexAction');
 $router->get('/money/coinchange', MoneyController::class . '::postCoinChange');
 
+$router->get('/figure', RepositoryController::class . '::indexAction');
+$router->get('/figure/square', GeometricFigures::class . '::getGeometricFigureData');
 // Run
 $router->run($request, $_SERVER['REQUEST_METHOD']);
 
