@@ -6,7 +6,7 @@ use src\api\Helpers;
 
 class GeometricFiguresController
 {
-    public static function getGeometricFigureData(array $request) : array
+    public static function getCalculateAreaAndPerimeter(array $request): array
     {
         $return = array();
 
@@ -38,7 +38,7 @@ class GeometricFiguresController
         return $return;
     }
 
-    public static function calcSquareAreaAndPerimeter(string $figure, float $a) : array
+    public static function calcSquareAreaAndPerimeter(string $figure, float $a): array
     {
         $area = 0;
         $perimeter = 0;
@@ -54,7 +54,7 @@ class GeometricFiguresController
         return $return;
     }
 
-    public static function calcCircleAreaAndPerimeter(string $figure, float $a) : array
+    public static function calcCircleAreaAndPerimeter(string $figure, float $a): array
     {
         $area = 0;
         $perimeter = 0;
@@ -70,7 +70,7 @@ class GeometricFiguresController
         return $return;
     }
 
-    public static function calcTriangleAreaAndPerimeter(string $figure, float $a, float $b, float $c, float $base, float $height) : array
+    public static function calcTriangleAreaAndPerimeter(string $figure, float $a, float $b, float $c, float $base, float $height): array
     {
         $area = 0;
         $perimeter = 0;
@@ -85,7 +85,7 @@ class GeometricFiguresController
 
         return $return;
     }
-    public static function calcTrapezeAreaAndPerimeter(string $figure, float $baseB, float $baseb, float $height, float $sideA, float $sideB) : array
+    public static function calcTrapezeAreaAndPerimeter(string $figure, float $baseB, float $baseb, float $height, float $sideA, float $sideB): array
     {
         $area = 0;
         $perimeter = 0;
