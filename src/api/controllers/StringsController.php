@@ -61,13 +61,16 @@ class StringsController
     public static function getHexOctBinFromCharacter(array $character): array
     {
         $return = array();
-        $character = $character['char'];
-        $return[$character]['DEC'] = ord($character);
-        $return[$character]['HEX'] = dechex($return[$character]['DEC']);
-        $return[$character]['OCT'] = decoct($return[$character]['DEC']);
-        $return[$character]['BIN'] = decbin($return[$character]['DEC']);
-        $return[$character]['HTML'] = '&#'. $return[$character]['DEC'] . ';';
-
+        if (isset($character['char']) && !empty($character['char'])) {
+            if (strlen($character['char']) == 1) {
+                $character = $character['char'];
+                $return[$character]['DEC'] = ord($character);
+                $return[$character]['HEX'] = dechex($return[$character]['DEC']);
+                $return[$character]['OCT'] = decoct($return[$character]['DEC']);
+                $return[$character]['BIN'] = decbin($return[$character]['DEC']);
+                $return[$character]['HTML'] = '&#' . $return[$character]['DEC'] . ';';
+            }else $return = Helpers::formatResponse(403, 'Character NOT SUpported Yet!', []);
+        } else $return = Helpers::formatResponse(403, 'Character NOT Found', []);
         $return = Helpers::formatResponse(200, 'Results', $return);
 
         return $return;
