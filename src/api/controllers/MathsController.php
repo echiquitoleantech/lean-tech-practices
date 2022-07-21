@@ -52,4 +52,19 @@ class MathsController
 
         return $return;
     }
+
+    public static function calcMultiplyTableForXNumber(array $request): array
+    {
+        $return = strval('');
+
+        if (isset($request['number'])) {
+            for ($i = 1; $i <= 10; $i++) {
+                $result[$request['number']][] = $request['number'] .' X ' . $i . ' = ' . intval($request['number']) * $i;
+            }
+            $return = Helpers::formatResponse(200, 'Success', $result);
+        } else $return = Helpers::formatResponse(403, 'Key \'number\' Not Found', []);
+
+
+        return $return;
+    }
 }
