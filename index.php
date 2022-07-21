@@ -14,6 +14,7 @@ header('content-type: application/json; charset=utf-8');
 use src\api\controllers\RepositoryController;
 use src\api\controllers\MoneyController;
 use src\api\controllers\GeometricFigures;
+use src\api\controllers\ChooseVocalsFromPhrase;
 use src\api\Helpers;
 
 spl_autoload_register(function ($class) {
@@ -50,6 +51,8 @@ $router->get('/money', RepositoryController::class . '::indexAction');
 $router->get('/money/coinchange', MoneyController::class . '::postCoinChange');
 
 $router->get('/figures', GeometricFigures::class . '::getGeometricFigureData');
+
+$router->get('/phraseVocals', ChooseVocalsFromPhrase::class . '::getVocalsData');
 // Run
 $router->run($request, $_SERVER['REQUEST_METHOD']);
 
