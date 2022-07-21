@@ -55,6 +55,7 @@ $router->get('/figures', GeometricFiguresController::class . '::getGeometricFigu
 
 $router->get('/strings/phrasevocals', StringsController::class . '::getVocalsData');
 $router->get('/strings/reversestring', StringsController::class . '::getReverseString');
+$router->get('/strings/chrTodechexoct', StringsController::class . '::getHexOctBinFromCharacter');
 $router->get('/strings/pronunciation', StringsController::class . '::getStringPronunciation');
 
 $router->run($request, $_SERVER['REQUEST_METHOD']);
