@@ -6,7 +6,7 @@ use src\api\Helpers;
 
 class MoneyController
 {
-    public static function postCoinChange($request)
+    public static function getCoinChange($request)
     {
         $return = array();
 
