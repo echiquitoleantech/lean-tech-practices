@@ -4,9 +4,9 @@ namespace src\api\controllers;
 
 use src\api\Helpers;
 
-class ChooseVocalsFromPhrase
+class StringsController
 {
-    public static function getVocalsData(array $request) : array
+    public static function getVocalsData(array $request): array
     {
         $return = array();
         if (isset($request['phrase']) && !empty($request['phrase'])) {
@@ -23,7 +23,7 @@ class ChooseVocalsFromPhrase
         return $return;
     }
 
-    public static function array_change_value_case(array $input, $ucase) : array
+    public static function array_change_value_case(array $input, $ucase): array
     {
         $case = $ucase;
         $narray = array();
