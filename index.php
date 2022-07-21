@@ -14,6 +14,7 @@ header('content-type: application/json; charset=utf-8');
 use src\api\controllers\RepositoryController;
 use src\api\controllers\MoneyController;
 use src\api\controllers\MathsController;
+use src\api\controllers\GeometricFigures;
 use src\api\Helpers;
 
 spl_autoload_register(function ($class) {
@@ -41,8 +42,10 @@ $router = new src\core\Router();
 $router->any(RepositoryController::class . '::noActionFound');
 $router->get('/', RepositoryController::class . '::indexAction');
 $router->get('/money', RepositoryController::class . '::indexAction');
-$router->get('/money/coinchange', MoneyController::class . '::getCoinChange');
 $router->get('/maths', RepositoryController::class . '::indexAction');
+
+$router->get('/money/coinchange', MoneyController::class . '::getCoinChange');
 $router->get('/maths/calculator', MathsController::class . '::getBasicCalculator');
+$router->get('/figures', GeometricFigures::class . '::getGeometricFigureData');
 
 $router->run($request, $_SERVER['REQUEST_METHOD']);
