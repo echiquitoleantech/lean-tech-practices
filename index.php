@@ -59,4 +59,10 @@ $router->get('/strings/reversestring', StringsController::class . '::getReverseS
 $router->get('/strings/chrTodechexoct', StringsController::class . '::getHexOctBinFromCharacter');
 $router->get('/strings/pronunciation', StringsController::class . '::getStringPronunciation');
 
+$router->get('/shoppingcart/details', ShoppingCartController::class . '::getDetails');
+$router->post('/shoppingcart/additem', ShoppingCartController::class . '::postItem');
+$router->put('/shoppingcart/edititem', ShoppingCartController::class . '::putItem');
+$router->patch('/shoppingcart/edititem', ShoppingCartController::class . '::patchItem');
+$router->delete('/shoppingcart/delete', ShoppingCartController::class . '::deleteItem');
+
 $router->run($request, $_SERVER['REQUEST_METHOD']);

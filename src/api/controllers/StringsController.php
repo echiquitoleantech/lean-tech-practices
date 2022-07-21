@@ -17,7 +17,7 @@ class StringsController
             $return = key_exists($str, $pronunciationArray)
                 ? Helpers::formatResponse(200, 'success', $pronunciationArray[$str])
                 : Helpers::formatResponse(403, 'Value Not Match', []);
-                
+
         } else $return = Helpers::formatResponse(403, 'Literal Not Found', []);
         return $return;
     }
@@ -49,7 +49,7 @@ class StringsController
         return $return;
     }
 
-    public static function array_change_value_case(array $input, string $ucase): array
+    private static function array_change_value_case(array $input, string $ucase): array
     {
         $case = $ucase;
         $return = array();
