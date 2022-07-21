@@ -6,7 +6,7 @@ use src\api\Helpers;
 
 class MathsController
 {
-    public static $validMathsBasicCalculator = ['addition', 'subtraction', 'division',  'multiplication'];
+    public static $validMathsBasicCalculator = ['addition', 'subtraction', 'division', 'multiplication'];
 
     public static function getMathsCalculatorSign(string $op): string
     {
@@ -41,7 +41,7 @@ class MathsController
 
             $result = floatval(0);
 
-            if (!isset($request['base']) && !is_numeric($request['base']) && !isset($request['values']) && count($request['values']) == 0) $return = Helpers::formatResponse(403, 'Basic Calculator: Thx for using our function!', []);
+            if (!isset($request['base']) || !is_numeric($request['base']) || !isset($request['values']) || count($request['values']) == 0) $return = Helpers::formatResponse(403, 'Basic Calculator: Thx for using our function!', []);
 
             else {
                 $result = floatval($request['base']);
