@@ -11,6 +11,8 @@ header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE');
 header('content-type: application/json; charset=utf-8');
 
+const ROOT_API_PATH = __DIR__ . '/';
+
 use src\api\controllers\RepositoryController;
 use src\api\controllers\MoneyController;
 use src\api\controllers\MathsController;
@@ -54,5 +56,6 @@ $router->get('/figures', GeometricFiguresController::class . '::getGeometricFigu
 $router->get('/strings/phrasevocals', StringsController::class . '::getVocalsData');
 $router->get('/strings/reversestring', StringsController::class . '::getReverseString');
 $router->get('/strings/chrTodechexoct', StringsController::class . '::getHexOctBinFromCharacter');
+$router->get('/strings/pronunciation', StringsController::class . '::getStringPronunciation');
 
 $router->run($request, $_SERVER['REQUEST_METHOD']);
