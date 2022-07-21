@@ -13,6 +13,7 @@ header('content-type: application/json; charset=utf-8');
 
 use src\api\controllers\RepositoryController;
 use src\api\controllers\MoneyController;
+use src\api\controllers\GeometricFigures;
 use src\api\Helpers;
 
 spl_autoload_register(function ($class) {
@@ -48,8 +49,7 @@ $router->get('/', RepositoryController::class . '::indexAction');
 $router->get('/money', RepositoryController::class . '::indexAction');
 $router->get('/money/coinchange', MoneyController::class . '::postCoinChange');
 
-$router->get('/figure', RepositoryController::class . '::indexAction');
-$router->get('/figure/square', GeometricFigures::class . '::getGeometricFigureData');
+$router->get('/figures', GeometricFigures::class . '::getGeometricFigureData');
 // Run
 $router->run($request, $_SERVER['REQUEST_METHOD']);
 
