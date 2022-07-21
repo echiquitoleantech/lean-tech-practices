@@ -51,5 +51,6 @@ $router->get('/maths/calculator', MathsController::class . '::getBasicCalculator
 $router->get('/figures', GeometricFiguresController::class . '::getGeometricFigureData');
 
 $router->get('/strings/phrasevocals', StringsController::class . '::getVocalsData');
+$router->get('/strings/reversestring', StringsController::class . '::getReverseString');
 
 $router->run($request, $_SERVER['REQUEST_METHOD']);
