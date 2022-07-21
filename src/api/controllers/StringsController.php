@@ -11,7 +11,7 @@ class StringsController
         $return = array();
 
         if (isset($request['string']) && !empty($request['string'])) {
-            
+
             $result = strval('');
             $str = strval($request['string']);
             for ($i = (strlen($str) - 1); $i >= 0; $i--) $result .= $str[$i];
@@ -56,5 +56,20 @@ class StringsController
             $narray[$key] = ($case == CASE_UPPER ? strtoupper($value) : strtolower($value));
         }
         return $narray;
+    }
+
+    public static function getHexOctBinFromCharacter(array $character): array
+    {
+        $return = array();
+        $character = $character['char'];
+        $return[$character]['DEC'] = ord($character);
+        $return[$character]['HEX'] = dechex($return[$character]['DEC']);
+        $return[$character]['OCT'] = decoct($return[$character]['DEC']);
+        $return[$character]['BIN'] = decbin($return[$character]['DEC']);
+        $return[$character]['HTML'] = '&#'. $return[$character]['DEC'] . ';';
+
+        $return = Helpers::formatResponse(200, 'Results', $return);
+
+        return $return;
     }
 }
