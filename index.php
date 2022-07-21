@@ -14,8 +14,8 @@ header('content-type: application/json; charset=utf-8');
 use src\api\controllers\RepositoryController;
 use src\api\controllers\MoneyController;
 use src\api\controllers\MathsController;
-use src\api\controllers\GeometricFigures;
-use src\api\controllers\ChooseVocalsFromPhrase;
+use src\api\controllers\GeometricFiguresController;
+use src\api\controllers\StringsController;
 use src\api\Helpers;
 
 spl_autoload_register(function ($class) {
@@ -44,11 +44,12 @@ $router->any(RepositoryController::class . '::noActionFound');
 $router->get('/', RepositoryController::class . '::indexAction');
 $router->get('/money', RepositoryController::class . '::indexAction');
 $router->get('/maths', RepositoryController::class . '::indexAction');
+$router->get('/strings', RepositoryController::class . '::indexAction');
 
 $router->get('/money/coinchange', MoneyController::class . '::getCoinChange');
 $router->get('/maths/calculator', MathsController::class . '::getBasicCalculator');
-$router->get('/figures', GeometricFigures::class . '::getGeometricFigureData');
+$router->get('/figures', GeometricFiguresController::class . '::getGeometricFigureData');
 
-$router->get('/phraseVocals', ChooseVocalsFromPhrase::class . '::getVocalsData');
+$router->get('/strings/phrasevocals', StringsController::class . '::getVocalsData');
 
 $router->run($request, $_SERVER['REQUEST_METHOD']);

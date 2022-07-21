@@ -4,7 +4,7 @@ namespace src\api\controllers;
 
 use src\api\Helpers;
 
-class GeometricFigures
+class GeometricFiguresController
 {
     public static function getGeometricFigureData(array $request) : array
     {
